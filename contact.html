@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Amna Mazhar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Contact Me</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
+
+<section class="contact">
+    <h2>Get In Touch</h2>
+
+    <p><strong>Email:</strong> 240044@students.au.edu.pk</p>
+    <p><strong>University:</strong> Air University</p>
+
+    <form onsubmit="return showMessage()">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="success-msg"></p>
+</section>
+
+<footer>
+    <p>© 2025 Amna Mazhar</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
