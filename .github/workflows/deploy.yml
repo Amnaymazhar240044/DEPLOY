@@ -1,4 +1,4 @@
-name: Docker Build Verification
+name: Docker Build Workflow
 
 on:
   push:
@@ -6,15 +6,20 @@ on:
       - main
 
 jobs:
-  check-docker:
+  build-docker:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Verify Docker is available
-        run: docker --version
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-      - name: List project files
-        run: ls -la
+      - name: Build Docker image
+        run: docker build -t deploy-website .
+
+      - name: List Docker images
+        run: docker images
